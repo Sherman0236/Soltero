@@ -8,7 +8,7 @@ void Main()
 	printf("Address\tSize\tName\n");
 	uint64_t pImage = Global::Functions.MonoImageLoaded((char*)"Assembly-CSharp");																		// Call the function for Assembly-CSharp and store the return
 	printf("%I64X\t%I32X\t%s\n", pImage, *reinterpret_cast<uint32_t*>(pImage + 0x18), pImage);															
-	*reinterpret_cast<uint32_t*>(pImage + 0x18) = 0x7BF298;																								// Write the image length to the proper image length for the legitimate game
+	*reinterpret_cast<uint32_t*>(pImage + 0x18) = 0x7BF298;																								// Write the correct image length
 }
 
 BOOL APIENTRY DllMain(HMODULE module, DWORD reason, LPVOID reserved)
